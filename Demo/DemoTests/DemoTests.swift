@@ -48,7 +48,7 @@ class DemoTests: XCTestCase {
     }
 
     func delete(path: String) throws {
-        guard FileManager.default.isDeletableFile(atPath: path) else { return }
+        guard FileManager.default.fileExists(atPath: path) else { return }
         try FileManager.default.removeItem(atPath: path)
     }
 }
