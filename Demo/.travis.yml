@@ -1,0 +1,12 @@
+osx_image: xcode11
+language: objective-c
+
+script:
+- cd Demo
+- pod install
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES \
+  -workspace Demo.xcworkspace -scheme Demo CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \
+  -destination 'platform=iOS Simulator,name=iPhone Xs,OS=12.2' | xcpretty
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 0298231a-c955-4b16-a835-4ee2f26a06c2
