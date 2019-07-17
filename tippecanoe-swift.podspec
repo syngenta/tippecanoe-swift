@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'tippecanoe-swift'
-s.version          = '1.0.0'
+s.version          = `git describe --abbrev=0 --tags`
 s.summary          = 'Tippecanoe library with swift bindings'
 
 s.homepage         = 'https://github.com/cropio/tippecanoe-swift'
