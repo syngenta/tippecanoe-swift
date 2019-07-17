@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/cropio/tippecanoe-swift.svg?branch=master)](https://travis-ci.org/cropio/tippecanoe-swift) [![codecov](https://codecov.io/gh/cropio/tippecanoe-swift/branch/master/graph/badge.svg)](https://codecov.io/gh/cropio/tippecanoe-swift)
 
-Tippecanoe library with swift bindings
+Tippecanoe library with swift bindings. Tippecanoe version 1.15.4
 
 ### Instalation
 For installation you can use cocoapods
