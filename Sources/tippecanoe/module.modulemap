@@ -1,0 +1,4 @@
+module tippecanoe {
+    header "tippecanoe.hpp"
+    export *
+}
