@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEg-8T-OPw">
-                                <rect key="frame" x="151" y="220" width="112" height="30"/>
+                                <rect key="frame" x="177.5" y="220" width="59" height="30"/>
                                 <state key="normal" title="RENDER"/>
                                 <connections>
                                     <action selector="render" destination="BYZ-38-t0r" eventType="touchUpInside" id="X2r-qZ-dJI"/>
@@ -28,9 +28,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VEg-8T-OPw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="151" id="6jw-1n-qf8"/>
                             <constraint firstItem="VEg-8T-OPw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="176" id="9g7-tx-f69"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VEg-8T-OPw" secondAttribute="trailing" constant="151" id="R1r-CT-FDY"/>
+                            <constraint firstItem="VEg-8T-OPw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TF4-9h-EgB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

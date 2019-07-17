@@ -15,18 +15,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-
-    var i = 0
-
     @IBAction func render() {
-        self.i += 1
-
-
-        guard let input = Bundle.main.path(forResource: "fields", ofType: "json") else {
+        guard let input = Bundle.main.path(forResource: "poligons", ofType: "json") else {
             return
         }
 
-        let output = NSTemporaryDirectory().appending("out\(self.i).mbtiles")
+        let output = NSTemporaryDirectory().appending("out.mbtiles")
 
         let tpc = Tippecanoe(input: input, output: output)
 
@@ -35,13 +29,10 @@ class ViewController: UIViewController {
         }, completion: { result in
             switch result {
             case .success:
-                print("done")
-            case .failure(_):
-                print("failure")
+                print("done - \(output)")
+            case .failure(let error):
+                print("failure - \(error)")
             }
         })
-
-        print(output)
     }
 }
-
