@@ -10,7 +10,6 @@ s.source           = { :git => 'https://github.com/cropio/tippecanoe-swift.git',
 s.ios.deployment_target = '10.0'
 s.swift_version = '5.2'
 s.source_files = 'Sources/*.{swift,cpp,hpp}'
-s.private_header_files = 'Sources/tippecanoe/**/*.{h,hpp}'
 s.libraries = 'sqlite3', 'z', 'c++'
 s.prepare_command = "sh install.sh"
 s.pod_target_xcconfig = {
@@ -22,25 +21,31 @@ s.pod_target_xcconfig = {
 
 s.subspec 'tippecanoe' do |ss|
   ss.source_files = 'Sources/tippecanoe/*.{c,h,cpp,hpp}'
+  ss.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
 
   ss.subspec 'catch' do |ss|
     ss.source_files = 'Sources/tippecanoe/catch/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/catch/*.{h,hpp}'
   end
 
   ss.subspec 'jsonpull' do |ss|
     ss.source_files = 'Sources/tippecanoe/jsonpull/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/jsonpull/*.{h,hpp}'
   end
 
   ss.subspec 'mapbox' do |ss|
     ss.source_files = 'Sources/tippecanoe/mapbox/**/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/mapbox/*.{h,hpp}'
   end
 
   ss.subspec 'milo' do |ss|
     ss.source_files = 'Sources/tippecanoe/milo/**/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/milo/*.{h,hpp}'
   end
 
   ss.subspec 'protozero' do |ss|
     ss.source_files = 'Sources/tippecanoe/protozero/**/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/protozero/*.{h,hpp}'
   end
 
 end
