@@ -22,6 +22,7 @@ s.pod_target_xcconfig = {
 s.subspec 'tippecanoe' do |ss|
   ss.source_files = 'Sources/tippecanoe/*.{c,h,cpp,hpp}'
   ss.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
+  ss.exclude_files = 'Sources/tippecanoe/**/*{version,config}.hpp'
 
   ss.subspec 'catch' do |ss|
     ss.source_files = 'Sources/tippecanoe/catch/*.{c,h,cpp,hpp}'
