@@ -12,7 +12,7 @@ s.swift_version = '5.2'
 s.source_files = 'Sources/*.{swift,cpp,hpp}', 'Sources/tippecanoe/**/*.{h,c,cpp,hpp}'
 s.private_header_files = 'Sources/tippecanoe/**/*.{h,hpp}'
 s.libraries = 'sqlite3', 'z', 'c++'
-s.prepare_command = "sh Sources/install.sh"
+s.prepare_command = "sh install.sh"
 s.pod_target_xcconfig = {
   'HEADER_SEARCH_PATHS' => '${PODS_TARGET_SRCROOT}/Sources/tippecanoe',
   'OTHER_CFLAGS' => '-DTARGET_OS_IPHONE=1',
