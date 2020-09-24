@@ -21,7 +21,16 @@ s.pod_target_xcconfig = {
 }
 
 s.subspec 'tippecanoe' do |ss|
-  ss.source_files = 'Sources/tippecanoe/**/*.{h,c,cpp,hpp}'
+  ss.source_files = 'Sources/tippecanoe/*.{cpp,hpp}'
+
+  ss.subspec 'catch' do |ss|
+    ss.source_files = 'Sources/tippecanoe/catch/*.{cpp,hpp}'
+  end
+
+  ss.subspec 'jsonpull' do |ss|
+    ss.source_files = 'Sources/tippecanoe/catch/*.{c,h}'
+  end
+
 end
 
 end
