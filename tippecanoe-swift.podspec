@@ -21,14 +21,26 @@ s.pod_target_xcconfig = {
 }
 
 s.subspec 'tippecanoe' do |ss|
-  ss.source_files = 'Sources/tippecanoe/*.{cpp,hpp}'
+  ss.source_files = 'Sources/tippecanoe/*.{c,h,cpp,hpp}'
 
   ss.subspec 'catch' do |ss|
-    ss.source_files = 'Sources/tippecanoe/catch/*.{cpp,hpp}'
+    ss.source_files = 'Sources/tippecanoe/catch/*.{c,h,cpp,hpp}'
   end
 
   ss.subspec 'jsonpull' do |ss|
-    ss.source_files = 'Sources/tippecanoe/catch/*.{c,h}'
+    ss.source_files = 'Sources/tippecanoe/jsonpull/*.{c,h,cpp,hpp}'
+  end
+
+  ss.subspec 'mapbox' do |ss|
+    ss.source_files = 'Sources/tippecanoe/mapbox/**/*.{c,h,cpp,hpp}'
+  end
+
+  ss.subspec 'milo' do |ss|
+    ss.source_files = 'Sources/tippecanoe/milo/**/*.{c,h,cpp,hpp}'
+  end
+
+  ss.subspec 'protozero' do |ss|
+    ss.source_files = 'Sources/tippecanoe/protozero/**/*.{c,h,cpp,hpp}'
   end
 
 end
