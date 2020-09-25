@@ -35,14 +35,18 @@ s.subspec 'tippecanoe' do |ss|
   ]
 
   ss.subspec 'mapbox' do |ss|
-    ss.source_files = 'Sources/tippecanoe/mapbox/**/*.{c,h,cpp,hpp}'
-    ss.private_header_files = 'Sources/tippecanoe/mapbox/**/*.{h,hpp}'
+    ss.source_files = 'Sources/tippecanoe/mapbox/*.{c,h,cpp,hpp}'
+    ss.private_header_files = 'Sources/tippecanoe/mapbox/*.{h,hpp}'
     ss.exclude_files = [
       'Sources/tippecanoe/mapbox/geometry/snap_rounding.hpp',
       # 'Sources/tippecanoe/mapbox/geometry.hpp',
       'Sources/tippecanoe/mapbox/geometry/point.hpp',
       'Sources/tippecanoe/mapbox/geometry/wagyu/config.hpp'
     ]
+    ss.subspec 'geometry' do |ss|
+      ss.source_files = 'Sources/tippecanoe/mapbox/geometry/**/*.{c,h,cpp,hpp}'
+      ss.private_header_files = 'Sources/tippecanoe/mapbox/geometry/**/*.{h,hpp}'
+    end
   end
 end
 end
