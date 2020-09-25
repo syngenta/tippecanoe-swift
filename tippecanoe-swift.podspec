@@ -40,7 +40,7 @@ s.subspec 'tippecanoe' do |ss|
     ss.exclude_files = [
       'Sources/tippecanoe/mapbox/geometry/snap_rounding.hpp',
       'Sources/tippecanoe/mapbox/geometry.hpp',
-      'Sources/tippecanoe/mapbox/geometry/point.hpp'
+      'Sources/tippecanoe/mapbox/geometry/point.hpp',
       'Sources/tippecanoe/mapbox/geometry/wagyu/config.hpp'
     ]
   end
