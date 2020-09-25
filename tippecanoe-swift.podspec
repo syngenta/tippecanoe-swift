@@ -26,7 +26,7 @@ s.subspec 'tippecanoe' do |ss|
     'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.{c,h,cpp,hpp}'
   ]
   ss.public_header_files = [
-    'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.[^{h,c}]*'
+    'Sources/tippecanoe/catch/**/*.hpp'
   ]
   ss.private_header_files = [
     'Sources/tippecanoe/*.{h,hpp}'
