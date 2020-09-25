@@ -15,7 +15,7 @@ class DemoTests: XCTestCase {
 
     func testRender() {
 
-        guard let input = Bundle.main.path(forResource: "poligons", ofType: "json") else {
+        guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
             return
         }
 
@@ -29,7 +29,7 @@ class DemoTests: XCTestCase {
 
         let expectation = self.expectation(description: #function)
 
-        let options = TippecanoeOptions(input: input, output: output, layer: "poligons")
+        let options = TippecanoeOptions(input: input, output: output, layer: "polygons")
         self.manager.render(with: options, progress: { progress in
             print(progress)
         }, completion: { result in
@@ -52,7 +52,7 @@ class DemoTests: XCTestCase {
 
     func testJoin() {
 
-        guard let input = Bundle.main.path(forResource: "poligons", ofType: "json") else {
+        guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
             return
         }
 
@@ -72,7 +72,7 @@ class DemoTests: XCTestCase {
         let expectation2 = self.expectation(description: #function)
         let expectation3 = self.expectation(description: #function)
 
-        let options1 = TippecanoeOptions(input: input, output: input1, layer: "poligons1")
+        let options1 = TippecanoeOptions(input: input, output: input1, layer: "polygons1")
         self.manager.render(with: options1, progress: { progress in
             print(progress)
         }, completion: { result in
@@ -85,7 +85,7 @@ class DemoTests: XCTestCase {
             }
         })
 
-        let options2 = TippecanoeOptions(input: input, output: input2, layer: "poligons2")
+        let options2 = TippecanoeOptions(input: input, output: input2, layer: "polygons2")
         self.manager.render(with: options2, progress: { progress in
             print(progress)
         }, completion: { result in

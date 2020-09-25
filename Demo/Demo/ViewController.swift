@@ -18,15 +18,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func render() {
-        guard let input = Bundle.main.path(forResource: "poligons", ofType: "json") else {
+        guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
             return
         }
 
         let output = NSTemporaryDirectory().appending("out.mbtiles")
 
-        let options = TippecanoeOptions(input: input, output: output, layer: "poligons")
+        let options = TippecanoeOptions(input: input, output: output, layer: "polygons")
 
-        manager.render(with: options, progress: { progress in
+        self.manager.render(with: options, progress: { progress in
             print(progress)
         }, completion: { result in
             switch result {

@@ -71,7 +71,7 @@ public struct TippecanoeOptions {
                 baseZoom: BaseZoom = .deinit,
                 noStat: Bool = true,
                 noTileCompression: Bool = false,
-                parallel: Bool = true,
+                parallel: Bool = false,
                 quiet: Bool = true) {
 
         self.input = input

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		152EA65522DE34FC00C6D7A4 /* poligons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* poligons.json */; };
-		152EA65A22DF6DC400C6D7A4 /* poligons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* poligons.json */; };
+		152EA65522DE34FC00C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
+		152EA65A22DF6DC400C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
 		15E2495322D8E58B001D6F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495222D8E58B001D6F87 /* AppDelegate.swift */; };
 		15E2495522D8E58B001D6F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495422D8E58B001D6F87 /* ViewController.swift */; };
 		15E2495822D8E58B001D6F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495622D8E58B001D6F87 /* Main.storyboard */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		10F6C4B96641C7A907F527A8 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		152EA65422DE34FC00C6D7A4 /* poligons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = poligons.json; sourceTree = "<group>"; };
+		152EA65422DE34FC00C6D7A4 /* polygons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = polygons.json; sourceTree = "<group>"; };
 		15E2494F22D8E58B001D6F87 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E2495222D8E58B001D6F87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E2495422D8E58B001D6F87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		15E2495122D8E58B001D6F87 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				152EA65422DE34FC00C6D7A4 /* poligons.json */,
+				152EA65422DE34FC00C6D7A4 /* polygons.json */,
 				15E2495222D8E58B001D6F87 /* AppDelegate.swift */,
 				15E2495422D8E58B001D6F87 /* ViewController.swift */,
 				15E2495622D8E58B001D6F87 /* Main.storyboard */,
@@ -216,7 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152EA65522DE34FC00C6D7A4 /* poligons.json in Resources */,
+				152EA65522DE34FC00C6D7A4 /* polygons.json in Resources */,
 				15E2495D22D8E58C001D6F87 /* LaunchScreen.storyboard in Resources */,
 				15E2495A22D8E58C001D6F87 /* Assets.xcassets in Resources */,
 				15E2495822D8E58B001D6F87 /* Main.storyboard in Resources */,
@@ -227,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152EA65A22DF6DC400C6D7A4 /* poligons.json in Resources */,
+				152EA65A22DF6DC400C6D7A4 /* polygons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
