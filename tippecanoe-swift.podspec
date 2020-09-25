@@ -26,14 +26,13 @@ s.subspec 'tippecanoe' do |ss|
     'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.{c,h,cpp,hpp}'
   ]
   ss.public_header_files = [
-    'Sources/tippecanoe/*.[^h]*',
+    # 'Sources/tippecanoe/*.[^h]*'
     'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.[^h]*'
   ]
   ss.private_header_files = [
-    'Sources/tippecanoe/main.hpp',
-    'Sources/tippecanoe/tile-join.hpp'
-  #   'Sources/tippecanoe/[^{config,version}]*.{h,hpp}',
-  #   'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/[^config]*.{h,hpp}'
+    'Sources/tippecanoe/*.{h,hpp}'
+    # 'Sources/tippecanoe/main.hpp',
+    # 'Sources/tippecanoe/tile-join.hpp'
   ]
 
   # ss.subspec 'mapbox' do |ss|
