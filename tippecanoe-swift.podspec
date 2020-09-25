@@ -10,6 +10,7 @@ s.source           = { :git => 'https://github.com/cropio/tippecanoe-swift.git',
 s.ios.deployment_target = '10.0'
 s.swift_version = '5.2'
 s.source_files = 'Sources/*.{swift,cpp,hpp}'
+s.public_header_files = 'Sources/*.{hpp}'
 s.libraries = 'sqlite3', 'z', 'c++'
 s.prepare_command = "sh install.sh"
 s.pod_target_xcconfig = {
