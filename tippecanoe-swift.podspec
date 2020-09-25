@@ -20,15 +20,29 @@ s.pod_target_xcconfig = {
 }
 
 s.subspec 'tippecanoe' do |ss|
-  ss.source_files = 'Sources/tippecanoe/*.{c,h,cpp,hpp}', 'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{c,h,cpp,hpp}'
-  ss.private_header_files = 'Sources/tippecanoe/*.{h,hpp}', 'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{h,hpp}'
-  ss.exclude_files = 'Sources/tippecanoe/**/*{version,config}.hpp'
-  ss.exclude_files = 'Sources/tippecanoe/config.hpp', 'Sources/tippecanoe/protozero/version.hpp'
+  ss.source_files = [
+    'Sources/tippecanoe/*.{c,h,cpp,hpp}',
+    'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{c,h,cpp,hpp}'
+  ]
+  ss.private_header_files = [
+    'Sources/tippecanoe/*.{h,hpp}',
+    'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{h,hpp}'
+  ]
+  ss.exclude_files = [
+    'Sources/tippecanoe/config.hpp',
+    'Sources/tippecanoe/protozero/version.hpp',
+    'Sources/tippecanoe/geometry.hpp'
+  ]
 
   ss.subspec 'mapbox' do |ss|
     ss.source_files = 'Sources/tippecanoe/mapbox/**/*.{c,h,cpp,hpp}'
     ss.private_header_files = 'Sources/tippecanoe/mapbox/**/*.{h,hpp}'
-    ss.exclude_files = 'Sources/tippecanoe/mapbox/geometry/snap_rounding.hpp'
+    ss.exclude_files = [
+      'Sources/tippecanoe/mapbox/geometry/snap_rounding.hpp',
+      'Sources/tippecanoe/mapbox/geometry.hpp',
+      'Sources/tippecanoe/mapbox/geometry/point.hpp'
+      'Sources/tippecanoe/mapbox/geometry/wagyu/config.hpp'
+    ]
   end
 end
 end
