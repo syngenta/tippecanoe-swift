@@ -25,26 +25,18 @@ s.subspec 'tippecanoe' do |ss|
     'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{c,h,cpp,hpp}'
   ]
   ss.private_header_files = [
-    'Sources/tippecanoe/*.{h,hpp}',
-    'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/[^config]*.{h,hpp}'
-  ]
-  ss.exclude_files = [
-    'Sources/tippecanoe/config.hpp',
-    'Sources/tippecanoe/protozero/version.hpp'
+    'Sources/tippecanoe/main.hpp',
+    'Sources/tippecanoe/tile-join.hpp'
+  #   'Sources/tippecanoe/[^{config,version}]*.{h,hpp}',
+  #   'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/[^config]*.{h,hpp}'
   ]
 
   ss.subspec 'mapbox' do |ss|
     ss.source_files = 'Sources/tippecanoe/mapbox/*.{c,h,cpp,hpp}'
-    ss.private_header_files = 'Sources/tippecanoe/mapbox/*.{h,hpp}'
-    ss.exclude_files = [
-      'Sources/tippecanoe/mapbox/geometry/snap_rounding.hpp',
-      # 'Sources/tippecanoe/mapbox/geometry.hpp',
-      'Sources/tippecanoe/mapbox/geometry/point.hpp',
-      'Sources/tippecanoe/mapbox/geometry/wagyu/config.hpp'
-    ]
+  #   ss.private_header_files = 'Sources/tippecanoe/mapbox/*.{h,hpp}'
     ss.subspec 'geometry' do |ss|
       ss.source_files = 'Sources/tippecanoe/mapbox/geometry/**/*.{c,h,cpp,hpp}'
-      ss.private_header_files = 'Sources/tippecanoe/mapbox/geometry/**/*.{h,hpp}'
+  #     ss.private_header_files = 'Sources/tippecanoe/mapbox/geometry/**/*.{h,hpp}'
     end
   end
 end
