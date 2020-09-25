@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'tippecanoe-swift'
-  s.version          = '1.1.0'
+  s.version          = `git describe --abbrev=0 --tags`
   s.summary          = 'Tippecanoe library with swift bindings'
 
   s.homepage         = 'https://github.com/cropio/tippecanoe-swift'
@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
       'Sources/tippecanoe/*.{c,h,cpp,hpp}',
       'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.{c,h,cpp,hpp}'
     ]
+    #need for moving other headers to project headers
     s.public_header_files = 'Sources/tippecanoe/version.hpp'
     s.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
   end
