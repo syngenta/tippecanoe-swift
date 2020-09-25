@@ -11,20 +11,22 @@ import tippecanoe_swift
 
 class ViewController: UIViewController {
 
+    private let manager = TippecanoeManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func render() {
-        guard let input = Bundle.main.path(forResource: "poligons", ofType: "json") else {
+        guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
             return
         }
 
         let output = NSTemporaryDirectory().appending("out.mbtiles")
 
-        let tpc = Tippecanoe(input: input, output: output)
+        let options = TippecanoeOptions(input: input, output: output, layer: "polygons")
 
-        tpc.render(progress: { progress in
+        self.manager.render(with: options, progress: { progress in
             print(progress)
         }, completion: { result in
             switch result {
