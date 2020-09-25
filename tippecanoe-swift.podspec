@@ -25,6 +25,7 @@ s.subspec 'tippecanoe' do |ss|
     'Sources/tippecanoe/*.{c,h,cpp,hpp}',
     'Sources/tippecanoe/{catch,jsonpull,milo,protozero}/**/*.{c,h,cpp,hpp}'
   ]
+  ss.public_header_files = ''
   ss.private_header_files = [
     'Sources/tippecanoe/main.hpp',
     'Sources/tippecanoe/tile-join.hpp'
