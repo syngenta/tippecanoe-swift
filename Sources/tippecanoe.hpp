@@ -44,6 +44,9 @@ typedef struct RenderOptions {
     char *tmpdir;
     int minzoom;
     int maxzoom;
+    int full_detail;
+    int low_detail;
+    int minimum_detail;
     char *layer;
     drop_rate drop_rate;
     base_zoom base_zoom;

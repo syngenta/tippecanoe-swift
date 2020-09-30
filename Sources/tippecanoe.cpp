@@ -17,8 +17,17 @@ int render_tiles(RenderOptions options, double *persent) {
     char maxzoom[18];
     sprintf(maxzoom, "--maximum-zoom=%d", options.maxzoom);
 
-    int argc = 10;
-    char *argv[17] = {
+    char full_detail[17];
+    sprintf(full_detail, "--full-detail=%d", options.full_detail);
+
+    char low_detail[16];
+    sprintf(low_detail, "--low-detail=%d", options.low_detail);
+
+    char minimum_detail[20];
+    sprintf(minimum_detail, "--minimum-detail=%d", options.minimum_detail);
+
+    int argc = 13;
+    char *argv[20] = {
         (char*)"tippecanoe",
         (char*)"-o",
         options.output,
@@ -27,6 +36,9 @@ int render_tiles(RenderOptions options, double *persent) {
         options.tmpdir,
         minzoom,
         maxzoom,
+        full_detail,
+        low_detail,
+        minimum_detail,
         (char*)"-l",
         options.layer
     };

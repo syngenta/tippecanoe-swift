@@ -46,6 +46,9 @@ let options = TippecanoeOptions(
     output: output,
     maxzoom: 10, // default 13
     minzoom: 0, // default 0
+    fullDetail: 12, // default 12
+    lowDetail: 12, // default 12
+    minimumDetail: 7, // default 7
     layer: "polygons",
     rewrite: true, // default true
     dropRate: .rg, // default .default

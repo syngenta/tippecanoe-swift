@@ -52,6 +52,9 @@ public struct TippecanoeOptions {
     let output: String
     let maxzoom: UInt8
     let minzoom: UInt8
+    let fullDetail: UInt8
+    let lowDetail: UInt8
+    let minimumDetail: UInt8
     let layer: String
     let rewrite: Bool
     let dropRate: DropRate
@@ -65,6 +68,9 @@ public struct TippecanoeOptions {
                 output: String,
                 maxzoom: UInt8 = 13,
                 minzoom: UInt8 = 0,
+                fullDetail: UInt8 = 12,
+                lowDetail: UInt8 = 12,
+                minimumDetail: UInt8 = 7,
                 layer: String,
                 rewrite: Bool = true,
                 dropRate: DropRate = .deinit,
@@ -78,6 +84,9 @@ public struct TippecanoeOptions {
         self.output = output
         self.maxzoom = maxzoom
         self.minzoom = minzoom
+        self.fullDetail = fullDetail
+        self.lowDetail = lowDetail
+        self.minimumDetail = minimumDetail
         self.layer = layer
         self.rewrite = rewrite
         self.dropRate = dropRate
