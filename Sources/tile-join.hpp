@@ -16,9 +16,9 @@ extern "C" {
 
 typedef struct JoinOptions {
     char *output;
-    char *input1;
-    char *input2;
+    char *input[10];
     char *tmpdir;
+    bool force;
     bool quiet;
 } JoinOptions;
 

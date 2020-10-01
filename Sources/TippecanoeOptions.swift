@@ -48,21 +48,21 @@ public struct TippecanoeOptions {
         }
     }
 
-    let input: String
-    let output: String
-    let maxzoom: UInt8
-    let minzoom: UInt8
-    let fullDetail: UInt8
-    let lowDetail: UInt8
-    let minimumDetail: UInt8
-    let layer: String
-    let rewrite: Bool
-    let dropRate: DropRate
-    let baseZoom: BaseZoom
-    let noStat: Bool
-    let noTileCompression: Bool
-    let parallel: Bool
-    let quiet: Bool
+    public let input: String
+    public let output: String
+    public let maxzoom: UInt8
+    public let minzoom: UInt8
+    public let fullDetail: UInt8
+    public let lowDetail: UInt8
+    public let minimumDetail: UInt8
+    public let layer: String
+    public let rewrite: Bool
+    public let dropRate: DropRate
+    public let baseZoom: BaseZoom
+    public let noStat: Bool
+    public let noTileCompression: Bool
+    public let parallel: Bool
+    public let quiet: Bool
 
     public init(input: String,
                 output: String,

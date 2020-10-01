@@ -80,7 +80,12 @@ let input1 = NSTemporaryDirectory().appending("input1.mbtiles")
 let input2 = NSTemporaryDirectory().appending("input2.mbtiles")
 let output = NSTemporaryDirectory().appending("joined.mbtiles")
 
-let options = TileJoinOptions(input1: input1, input2: input2, output: output)
+let options = TileJoinOptions(
+    input: input1, input2, // input path up to 10 paths
+    output: output, // output path
+    force: true, // default true
+    quiet: true, // default true
+)
 
 manager.join(with: options) { result in
     switch result {

@@ -9,14 +9,25 @@
 #include "tippecanoe/tile-join.hpp"
 
 int join_tiles(JoinOptions options) {
-    int argc = 5;
-    char *argv[6] = {
+    int argc = 3;
+    char *argv[15] = {
         (char*)"tile-join",
         (char*)"-o",
-        options.output,
-        options.input1,
-        options.input2
+        options.output
     };
+
+    for (int i = 0; i < 10; i++) {
+        char *input = options.input[i];
+        if (input) {
+            argv[argc] = input;
+            argc++;
+        }
+    }
+
+    if (options.force) {
+        argv[argc] = (char*)"--force";
+        argc++;
+    }
 
     if (options.quiet) {
         argv[argc] = (char*)"--quiet";

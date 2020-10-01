@@ -7,6 +7,23 @@
 
 import Foundation
 
+private extension TileJoinOptions {
+
+    typealias InputType = (UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?)
+
+    var inputTuple: InputType {
+        var result = [UnsafeMutablePointer<Int8>?]()
+        for index in 0..<10 {
+            if index < self.input.count {
+                result.append(self.input[index].unsafeMutablePointer)
+            } else {
+                result.append(nil)
+            }
+        }
+        return result.withUnsafeBytes { $0.bindMemory(to: InputType.self)[0] }
+    }
+}
+
 public class TippecanoeManager {
 
     private enum Errors: Error {
@@ -71,25 +88,32 @@ public class TippecanoeManager {
     }
 
     public func join(with options: TileJoinOptions, completion: @escaping (Result<Void, Error>) -> Void) {
-
+        guard options.input.count <= 10 else {
+            fatalError("Input path must be <= 10 (max 10)")
+        }
         self.queue.addOperation {
             let output = options.output.unsafeMutablePointer
-            let input1 = options.input1.unsafeMutablePointer
-            let input2 = options.input2.unsafeMutablePointer
             let tmp = NSTemporaryDirectory().unsafeMutablePointer
+            let input = options.inputTuple
+
             defer {
                 free(tmp)
-                free(input1)
-                free(input2)
                 free(output)
+
+                // free input tuple
+                Mirror(reflecting: input).children.forEach {
+                    if let value = $0.value as? UnsafeMutablePointer<Int8> {
+                        free(value)
+                    }
+                }
             }
 
             let _options = JoinOptions(
                 output: output,
-                input1: input1,
-                input2: input2,
+                input: input,
                 tmpdir: tmp,
-                quiet: true
+                force: options.force,
+                quiet: options.quiet
             )
 
             let result = join_tiles(_options)
