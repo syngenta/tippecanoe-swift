@@ -11,23 +11,23 @@
 
 int render_tiles(RenderOptions options, double *persent) {
 
-    char minzoom[18];
+    char minzoom[18]; // 18 - size of char array
     sprintf(minzoom, "--minimum-zoom=%d", options.minzoom);
 
-    char maxzoom[18];
+    char maxzoom[18]; // 18 - size of char array
     sprintf(maxzoom, "--maximum-zoom=%d", options.maxzoom);
 
-    char full_detail[17];
+    char full_detail[17]; // 17 - size of char array
     sprintf(full_detail, "--full-detail=%d", options.full_detail);
 
-    char low_detail[16];
+    char low_detail[16]; // 16 - size of char array
     sprintf(low_detail, "--low-detail=%d", options.low_detail);
 
-    char minimum_detail[20];
+    char minimum_detail[20]; // 20 - size of char array
     sprintf(minimum_detail, "--minimum-detail=%d", options.minimum_detail);
 
-    int argc = 13;
-    char *argv[20] = {
+    int argc = 13; // 13 - means 13 records in array on init
+    char *argv[20] = { // 20 - array size (max records count)
         (char*)"tippecanoe",
         (char*)"-o",
         options.output,

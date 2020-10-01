@@ -16,7 +16,7 @@ extern "C" {
 
 typedef struct JoinOptions {
     char *output;
-    char *input[10];
+    char *input[10]; // max 10 paths
     char *tmpdir;
     bool force;
     bool quiet;

@@ -11,7 +11,7 @@ private extension TileJoinOptions {
 
     typealias InputType = (UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?, UnsafeMutablePointer<Int8>?)
 
-    var inputTuple: InputType {
+    var inputTuple: InputType? {
         var result = [UnsafeMutablePointer<Int8>?]()
         for index in 0..<10 {
             if index < self.input.count {
@@ -20,7 +20,7 @@ private extension TileJoinOptions {
                 result.append(nil)
             }
         }
-        return result.withUnsafeBytes { $0.bindMemory(to: InputType.self)[0] }
+        return result.withUnsafeBytes { $0.bindMemory(to: InputType.self).first }
     }
 }
 
@@ -28,6 +28,7 @@ public class TippecanoeManager {
 
     private enum Errors: Error {
         case failure
+        case join(message: String)
     }
 
     public static let queue: OperationQueue = {
@@ -89,12 +90,16 @@ public class TippecanoeManager {
 
     public func join(with options: TileJoinOptions, completion: @escaping (Result<Void, Error>) -> Void) {
         guard options.input.count <= 10 else {
-            fatalError("Input path must be <= 10 (max 10)")
+            completion(.failure(Errors.join(message: "Input path must be <= 10 (max 10)")))
+            return
         }
         self.queue.addOperation {
             let output = options.output.unsafeMutablePointer
             let tmp = NSTemporaryDirectory().unsafeMutablePointer
-            let input = options.inputTuple
+            guard let input = options.inputTuple else {
+                completion(.failure(Errors.join(message: "Can't create input typle")))
+                return
+            }
 
             defer {
                 free(tmp)
