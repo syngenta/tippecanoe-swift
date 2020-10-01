@@ -109,7 +109,7 @@ class DemoTests: XCTestCase {
             return
         }
 
-        let joinOptions = TileJoinOptions(input1: input1, input2: input2, output: output)
+        let joinOptions = TileJoinOptions(input: input1, input2, output: output)
         self.manager.join(with: joinOptions) { result in
             switch result {
             case .success:

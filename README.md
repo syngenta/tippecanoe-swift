@@ -46,6 +46,9 @@ let options = TippecanoeOptions(
     output: output,
     maxzoom: 10, // default 13
     minzoom: 0, // default 0
+    fullDetail: 12, // default 12
+    lowDetail: 12, // default 12
+    minimumDetail: 7, // default 7
     layer: "polygons",
     rewrite: true, // default true
     dropRate: .rg, // default .default
@@ -77,7 +80,12 @@ let input1 = NSTemporaryDirectory().appending("input1.mbtiles")
 let input2 = NSTemporaryDirectory().appending("input2.mbtiles")
 let output = NSTemporaryDirectory().appending("joined.mbtiles")
 
-let options = TileJoinOptions(input1: input1, input2: input2, output: output)
+let options = TileJoinOptions(
+    input: input1, input2, // input path up to 10 paths
+    output: output, // output path
+    force: true, // default true
+    quiet: true, // default true
+)
 
 manager.join(with: options) { result in
     switch result {

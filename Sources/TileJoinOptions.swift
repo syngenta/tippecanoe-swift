@@ -8,19 +8,30 @@
 import Foundation
 
 public struct TileJoinOptions {
-    let input1: String
-    let input2: String
-    let output: String
-    let quiet: Bool
+    public let input: [String]
+    public let output: String
+    public let force: Bool
+    public let quiet: Bool
 
-    public init(input1: String,
-                input2: String,
+    public init(input: [String],
                 output: String,
+                force: Bool = true,
                 quiet: Bool = true) {
 
-        self.input1 = input1
-        self.input2 = input2
+        self.input = input
         self.output = output
+        self.force = force
+        self.quiet = quiet
+    }
+
+    public init(input: String...,
+                output: String,
+                force: Bool = true,
+                quiet: Bool = true) {
+
+        self.input = input
+        self.output = output
+        self.force = force
         self.quiet = quiet
     }
 }
