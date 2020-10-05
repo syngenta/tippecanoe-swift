@@ -10,7 +10,7 @@
 
 int join_tiles(JoinOptions options) {
     int argc = 3; // 3 - means 3 records in array on init
-    char *argv[15] = { // 15 - array size (max records count)
+    char *argv[17] = { // 17 - array size (max records count)
         (char*)"tile-join",
         (char*)"-o",
         options.output
@@ -31,6 +31,14 @@ int join_tiles(JoinOptions options) {
 
     if (options.quiet) {
         argv[argc] = (char*)"--quiet";
+        argc++;
+    }
+
+    if (options.filter) {
+        argv[argc] = (char*)"-j";
+        argc++;
+
+        argv[argc] = options.filter;
         argc++;
     }
 

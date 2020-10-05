@@ -18,6 +18,7 @@ typedef struct JoinOptions {
     char *output;
     char *input[10]; // max 10 paths
     char *tmpdir;
+    char *filter;
     bool force;
     bool quiet;
 } JoinOptions;

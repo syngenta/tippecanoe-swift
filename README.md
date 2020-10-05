@@ -85,6 +85,7 @@ let options = TileJoinOptions(
     output: output, // output path
     force: true, // default true
     quiet: true, // default true
+    filter: nil // default nil, example #"{"*":["none",["in","id", 4, 5]]}"# or #"{"*":["none",["==","id", 4]]}"#
 )
 
 manager.join(with: options) { result in

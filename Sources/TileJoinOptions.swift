@@ -12,26 +12,31 @@ public struct TileJoinOptions {
     public let output: String
     public let force: Bool
     public let quiet: Bool
+    public let filter: String?
 
     public init(input: [String],
                 output: String,
                 force: Bool = true,
-                quiet: Bool = true) {
+                quiet: Bool = true,
+                filter: String? = nil) {
 
         self.input = input
         self.output = output
         self.force = force
         self.quiet = quiet
+        self.filter = filter
     }
 
     public init(input: String...,
                 output: String,
                 force: Bool = true,
-                quiet: Bool = true) {
+                quiet: Bool = true,
+                filter: String? = nil) {
 
         self.input = input
         self.output = output
         self.force = force
         self.quiet = quiet
+        self.filter = filter
     }
 }

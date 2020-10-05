@@ -131,4 +131,59 @@ class DemoTests: XCTestCase {
         guard FileManager.default.fileExists(atPath: path) else { return }
         try FileManager.default.removeItem(atPath: path)
     }
+
+    func testTileJoinFilter() {
+        guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
+            return
+        }
+
+        let output = NSTemporaryDirectory().appending("test.mbtiles")
+
+        do {
+            try self.delete(path: output)
+        } catch {
+            XCTFail("error - \(error)")
+        }
+
+        let expectation = self.expectation(description: #function)
+        let expectation2 = self.expectation(description: #function)
+
+        let options = TippecanoeOptions(input: input, output: output, layer: "polygons")
+        self.manager.render(with: options, progress: { progress in
+            print(progress)
+        }, completion: { result in
+            switch result {
+            case .success:
+                print("done")
+                let url = URL(fileURLWithPath: output)
+                let data = try? Data(contentsOf: url)
+                XCTAssertEqual(data?.count, 24576)
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail("error - \(error)")
+                expectation.fulfill()
+            }
+        })
+
+        wait(for: [expectation], timeout: 20)
+
+        let filtered = NSTemporaryDirectory().appending("filteredTest.mbtiles")
+
+        let joinOptions = TileJoinOptions(input: output, output: filtered, filter: #"{"*":["none",["in","id", 4, 5, 6, 7]]}"#)
+        self.manager.join(with: joinOptions) { result in
+            switch result {
+            case .success:
+                print("done")
+                let url = URL(fileURLWithPath: filtered)
+                let data = try? Data(contentsOf: url)
+                XCTAssertEqual(data?.count, 24576)
+                expectation2.fulfill()
+            case .failure(let error):
+                XCTFail("error - \(error)")
+                expectation2.fulfill()
+            }
+        }
+
+        wait(for: [expectation2], timeout: 20)
+    }
 }
