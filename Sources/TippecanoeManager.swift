@@ -96,6 +96,7 @@ public class TippecanoeManager {
         self.queue.addOperation {
             let output = options.output.unsafeMutablePointer
             let tmp = NSTemporaryDirectory().unsafeMutablePointer
+            let filter = options.filter?.unsafeMutablePointer
             guard let input = options.inputTuple else {
                 completion(.failure(Errors.join(message: "Can't create input typle")))
                 return
@@ -104,6 +105,9 @@ public class TippecanoeManager {
             defer {
                 free(tmp)
                 free(output)
+                if let filter = filter {
+                    free(filter)
+                }
 
                 // free input tuple
                 Mirror(reflecting: input).children.forEach {
@@ -117,6 +121,7 @@ public class TippecanoeManager {
                 output: output,
                 input: input,
                 tmpdir: tmp,
+                filter: filter,
                 force: options.force,
                 quiet: options.quiet
             )
