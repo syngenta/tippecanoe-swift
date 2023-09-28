@@ -52,7 +52,10 @@ typedef struct RenderOptions {
     base_zoom base_zoom;
     bool no_stat;
     bool no_tile_compression;
+    bool drop_densest_as_needed;
+    bool drop_fraction_as_needed;
     bool parallel;
+
     bool quiet;
 } RenderOptions;
 

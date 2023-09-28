@@ -61,6 +61,8 @@ public struct TippecanoeOptions {
     public let baseZoom: BaseZoom
     public let noStat: Bool
     public let noTileCompression: Bool
+    public let dropDensestAsNeeded: Bool
+    public let dropFractionAsNeeded: Bool
     public let parallel: Bool
     public let quiet: Bool
 
@@ -77,6 +79,8 @@ public struct TippecanoeOptions {
                 baseZoom: BaseZoom = .deinit,
                 noStat: Bool = true,
                 noTileCompression: Bool = false,
+                dropDensestAsNeeded: Bool = false,
+                dropFractionAsNeeded: Bool = false,
                 parallel: Bool = false,
                 quiet: Bool = true) {
 
@@ -93,6 +97,8 @@ public struct TippecanoeOptions {
         self.baseZoom = baseZoom
         self.noStat = noStat
         self.noTileCompression = noTileCompression
+        self.dropDensestAsNeeded = dropDensestAsNeeded
+        self.dropFractionAsNeeded = dropFractionAsNeeded
         self.parallel = parallel
         self.quiet = quiet
     }

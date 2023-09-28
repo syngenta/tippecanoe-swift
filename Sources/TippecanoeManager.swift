@@ -77,6 +77,8 @@ public class TippecanoeManager {
                 base_zoom: options.baseZoom.oprion,
                 no_stat: options.noStat,
                 no_tile_compression: options.noTileCompression,
+                drop_densest_as_needed: options.dropDensestAsNeeded,
+                drop_fraction_as_needed: options.dropFractionAsNeeded,
                 parallel: options.parallel,
                 quiet: options.quiet
             )

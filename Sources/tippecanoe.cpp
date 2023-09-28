@@ -27,7 +27,7 @@ int render_tiles(RenderOptions options, double *persent) {
     sprintf(minimum_detail, "--minimum-detail=%d", options.minimum_detail);
 
     int argc = 13; // 13 - means 13 records in array on init
-    char *argv[20] = { // 20 - array size (max records count)
+    char *argv[22] = { // 22 - array size (max records count)
         (char*)"tippecanoe",
         (char*)"-o",
         options.output,
@@ -109,6 +109,16 @@ int render_tiles(RenderOptions options, double *persent) {
 
     if (options.no_tile_compression) {
         argv[argc] = (char*)"--no-tile-compression";
+        argc++;
+    }
+
+    if (options.drop_densest_as_needed) {
+        argv[argc] = (char*)"--drop-densest-as-needed";
+        argc++;
+    }
+
+    if (options.drop_fraction_as_needed) {
+        argv[argc] = (char*)"--drop-fraction-as-needed";
         argc++;
     }
 
