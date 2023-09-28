@@ -30,7 +30,7 @@ GeoJson struct must be like this (one feature on one line for parallel rendering
 ```
 One **Feature** for one line (<span style="color:red">**It is important!**</span>)
 
-Using in swift
+Using in swift (Parameters description at [https://github.com/mapbox/tippecanoe](https://github.com/mapbox/tippecanoe#cookbook))
 ```swift
 // path to geoJson file
 guard let input = Bundle.main.path(forResource: "polygons", ofType: "json") else {
@@ -55,6 +55,8 @@ let options = TippecanoeOptions(
     baseZoom: .Bg, // default .default
     noStat: true, // default true
     noTileCompression: false, // default false
+    dropDensestAsNeeded: false, // default false
+    dropFractionAsNeeded: false, // default false
     parallel: true, // default false (file structure must be one feature on one line)
     quiet: true // default true
 )
