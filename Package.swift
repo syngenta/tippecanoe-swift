@@ -22,20 +22,23 @@ let package = Package(
             path: "Sources",
             exclude: ["../install.sh"],
             sources: [
+                "tippecanoe/csv.cpp",
+                "tippecanoe/decode.cpp",
+                "tippecanoe/dirtiles.cpp",
                 "tippecanoe/catch",
-                "tippecanoe/jsonpull",
+                "tippecanoe/jsonpull/jsonpull.c",
                 "tippecanoe/milo",
                 "tippecanoe/protozero",
                 "tippecanoe/mapbox"
             ],
             publicHeadersPath: "tippecanoe",
-            cSettings: [
-                .headerSearchPath("tippecanoe"),
-                .define("TARGET_OS_IPHONE", to: "1"),
-                .unsafeFlags(["-O3", "-w"])
-            ],
             cxxSettings: [
                 .headerSearchPath("tippecanoe"),
+                .headerSearchPath("tippecanoe/catch"),
+                .headerSearchPath("tippecanoe/jsonpull"),
+                .headerSearchPath("tippecanoe/milo"),
+                .headerSearchPath("tippecanoe/protozero"),
+                .headerSearchPath("tippecanoe/mapbox"),
                 .define("TARGET_OS_IPHONE", to: "1"),
                 .unsafeFlags(["-O3", "-w"])
             ],
