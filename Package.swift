@@ -18,27 +18,25 @@ let package = Package(
     targets: [
         .target(
             name: "tippecanoe-swift",
+            dependencies: ["tippecanoe"],
+            path: "Sources/Swift"
+        ),
+        .target(
+            name: "tippecanoe",
             dependencies: [],
             path: "Sources",
-            exclude: ["../install.sh"],
             sources: [
-                "tippecanoe/csv.cpp",
-                "tippecanoe/decode.cpp",
-                "tippecanoe/dirtiles.cpp",
-                "tippecanoe/catch",
-                "tippecanoe/jsonpull/jsonpull.c",
-                "tippecanoe/milo",
-                "tippecanoe/protozero",
-                "tippecanoe/mapbox"
+                "tippecanoe",
+                "Bindings"
             ],
-            publicHeadersPath: "tippecanoe",
             cxxSettings: [
-                .headerSearchPath("tippecanoe"),
-                .headerSearchPath("tippecanoe/catch"),
-                .headerSearchPath("tippecanoe/jsonpull"),
-                .headerSearchPath("tippecanoe/milo"),
-                .headerSearchPath("tippecanoe/protozero"),
-                .headerSearchPath("tippecanoe/mapbox"),
+                .headerSearchPath("Sources/tippecanoe"),
+                .headerSearchPath("Sources/tippecanoe/catch"),
+                .headerSearchPath("Sources/tippecanoe/jsonpull"),
+                .headerSearchPath("Sources/tippecanoe/milo"),
+                .headerSearchPath("Sources/tippecanoe/protozero"),
+                .headerSearchPath("Sources/tippecanoe/mapbox"),
+                .headerSearchPath("Sources/Bindings"),
                 .define("TARGET_OS_IPHONE", to: "1"),
                 .unsafeFlags(["-O3", "-w"])
             ],
@@ -49,6 +47,5 @@ let package = Package(
             ]
         )
     ],
-    swiftLanguageVersions: [.v5],
-    cxxLanguageStandard: .cxx11
+    swiftLanguageVersions: [.v5]
 )
