@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "tippecanoe-swift",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v10)
     ],
     products: [
         .library(
@@ -12,7 +12,9 @@ let package = Package(
             targets: ["tippecanoe-swift"]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        // Додайте залежності, якщо потрібно
+    ],
     targets: [
         .target(
             name: "tippecanoe-swift",
@@ -28,6 +30,11 @@ let package = Package(
             ],
             publicHeadersPath: "tippecanoe",
             cSettings: [
+                .headerSearchPath("tippecanoe"),
+                .define("TARGET_OS_IPHONE", to: "1"),
+                .unsafeFlags(["-O3", "-w"])
+            ],
+            cxxSettings: [
                 .headerSearchPath("tippecanoe"),
                 .define("TARGET_OS_IPHONE", to: "1"),
                 .unsafeFlags(["-O3", "-w"])
