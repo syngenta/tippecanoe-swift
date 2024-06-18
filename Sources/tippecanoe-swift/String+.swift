@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import tippecanoe
 
 extension String {
     var unsafeMutablePointer: UnsafeMutablePointer<Int8> {
