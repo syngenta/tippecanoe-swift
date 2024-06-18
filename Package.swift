@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "tippecanoe-swift",
-            dependencies: ["tippecanoe"],
+            dependencies: ["tippecanoe-origin", "tippecanoe"],
             path: "Sources/tippecanoe-swift"
         ),
         .executableTarget(
