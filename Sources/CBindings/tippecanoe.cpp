@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include "tippecanoe.hpp"
-#include "../tippecanoe/main.hpp"
+#include "tippecanoe/main.hpp"
 
 int render_tiles(RenderOptions options, double *persent) {
 

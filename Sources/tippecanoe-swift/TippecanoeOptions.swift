@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import tippecanoe
+import tippecanoe
 
 public struct TippecanoeOptions {
 

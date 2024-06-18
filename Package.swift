@@ -10,42 +10,61 @@ let package = Package(
         .library(
             name: "tippecanoe-swift",
             targets: ["tippecanoe-swift"]
-        ),
+        )
     ],
-    dependencies: [
-        // Додайте залежності, якщо потрібно
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
-            path: "Sources/Swift"
+            path: "Sources/tippecanoe-swift"
         ),
-        .target(
-            name: "tippecanoe",
+        .executableTarget(
+            name: "tippecanoe-origin",
             dependencies: [],
             path: "Sources",
-            sources: [
-                "tippecanoe",
-                "Bindings"
+            exclude: [
+                "tippecanoe-swift",
+                "CBindings",
+                "tippecanoe/tests",
+                "tippecanoe/Dockerfile",
+                "tippecanoe/Dockerfile.centos7",
+                "tippecanoe/Makefile",
+                "tippecanoe/vector_tile.proto",
+                "tippecanoe/milo/LICENSE.txt",
+                "tippecanoe/mapbox/LICENSE-variant",
+                "tippecanoe/mapbox/LICENSE-wagyu",
+                "tippecanoe/man/tippecanoe.1",
+                "tippecanoe/filters/limit-tiles-to-bbox",
+                "tippecanoe/codecov.yml",
+                "tippecanoe/catch/LICENSE_1_0.txt",
+                "tippecanoe/README.md",
+                "tippecanoe/MADE_WITH.md",
+                "tippecanoe/LICENSE.md",
+                "tippecanoe/CHANGELOG.md"
             ],
+            sources: ["tippecanoe"],
+            publicHeadersPath: "tippecanoe",
             cxxSettings: [
-                .headerSearchPath("Sources/tippecanoe"),
-                .headerSearchPath("Sources/tippecanoe/catch"),
-                .headerSearchPath("Sources/tippecanoe/jsonpull"),
-                .headerSearchPath("Sources/tippecanoe/milo"),
-                .headerSearchPath("Sources/tippecanoe/protozero"),
-                .headerSearchPath("Sources/tippecanoe/mapbox"),
-                .headerSearchPath("Sources/Bindings"),
+                .headerSearchPath("tippecanoe"),
                 .define("TARGET_OS_IPHONE", to: "1"),
                 .unsafeFlags(["-O3", "-w"])
             ],
             linkerSettings: [
                 .linkedLibrary("sqlite3"),
-                .linkedLibrary("z"),
-                .linkedLibrary("c++")
+                .linkedLibrary("z")
+            ]
+        ),
+        .target(
+            name: "tippecanoe",
+            dependencies: ["tippecanoe-origin"],
+            path: "Sources/CBindings",
+            cSettings: [
+                .headerSearchPath("../"),
+                .define("TARGET_OS_IPHONE", to: "1")
             ]
         )
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v5],
+    cxxLanguageStandard: .cxx11
 )
