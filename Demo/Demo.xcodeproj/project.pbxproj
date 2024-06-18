@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		152EA65522DE34FC00C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
 		152EA65A22DF6DC400C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
+		15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341F72C21F98100B57E09 /* tippecanoe-swift */; };
+		15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341FA2C22055C00B57E09 /* tippecanoe-swift */; };
 		15E2495322D8E58B001D6F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495222D8E58B001D6F87 /* AppDelegate.swift */; };
 		15E2495522D8E58B001D6F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495422D8E58B001D6F87 /* ViewController.swift */; };
 		15E2495822D8E58B001D6F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495622D8E58B001D6F87 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */,
+				15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */,
 				DAD17DEA67E66B243DE42125 /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,13 +149,16 @@
 				15E2494B22D8E58B001D6F87 /* Sources */,
 				15E2494C22D8E58B001D6F87 /* Frameworks */,
 				15E2494D22D8E58B001D6F87 /* Resources */,
-				28079E52672DF289D962225B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+				15A341F72C21F98100B57E09 /* tippecanoe-swift */,
+				15A341FA2C22055C00B57E09 /* tippecanoe-swift */,
+			);
 			productName = Demo;
 			productReference = 15E2494F22D8E58B001D6F87 /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 15E2494622D8E58B001D6F87;
+			packageReferences = (
+				15A341F92C22055C00B57E09 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = 15E2495022D8E58B001D6F87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,23 +246,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28079E52672DF289D962225B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5E008BDC76613B760E9F8DC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,6 +567,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		15A341F92C22055C00B57E09 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15A341F72C21F98100B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15A341FA2C22055C00B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15E2494722D8E58B001D6F87 /* Project object */;
 }

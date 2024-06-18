@@ -1,23 +1,44 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
     name: "tippecanoe-swift",
-    platforms: [
-        .iOS(.v10)
-    ],
     products: [
         .library(
             name: "tippecanoe-swift",
+            type: .dynamic,
             targets: ["tippecanoe-swift"]
-        )
+        ),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
-            path: "Sources/tippecanoe-swift"
+            path: "Sources/tippecanoe-swift",
+            cSettings: [
+                .define("TARGET_OS_IPHONE", to: "1")
+            ],
+            cxxSettings: [
+                .define("TARGET_OS_IPHONE", to: "1")
+            ]
+        ),
+        .target(
+            name: "tippecanoe",
+            dependencies: ["tippecanoe-origin"],
+            path: "Sources/CBindings",
+            cSettings: [
+                .headerSearchPath("../"),
+                .headerSearchPath("../tippecanoe"),
+                .define("TARGET_OS_IPHONE", to: "1")
+            ],
+            cxxSettings: [
+                .headerSearchPath("../"),
+                .headerSearchPath("../tippecanoe"),
+                .headerSearchPath("../tippecanoe/include"),
+                .define("TARGET_OS_IPHONE", to: "1")
+            ],
+            swiftSettings: [.interoperabilityMode(.Cxx)]
         ),
         .target(
             name: "tippecanoe-origin",
@@ -41,27 +62,46 @@ let package = Package(
                 "LICENSE.md",
                 "CHANGELOG.md"
             ],
+            sources: [
+                "geocsv.cpp",
+                "geojson.cpp",
+                "geometry.cpp",
+                "geobuf.cpp",
+                "text.cpp",
+                "csv.cpp",
+                "write_json.cpp",
+                "projection.cpp",
+                "memfile.cpp",
+                "mvt.cpp",
+                "evaluator.cpp",
+                "plugin.cpp",
+                "serial.cpp",
+                "mbtiles.cpp",
+                "dirtiles.cpp",
+                "unit.cpp",
+                "read_json.cpp",
+                "geojson-loop.cpp",
+                "decode.cpp",
+                "pool.cpp",
+                "tile.cpp",
+                "enumerate.cpp",
+                "main.cpp",
+                "tile-join.cpp",
+                "jsontool.cpp",
+                "jsonpull/jsonpull.c"
+            ],
             publicHeadersPath: ".",
             cxxSettings: [
                 .headerSearchPath("."),
-                .define("TARGET_OS_IPHONE", to: "1"),
-                .unsafeFlags(["-O3", "-w"])
+                .headerSearchPath("include"),
+                .define("TARGET_OS_IPHONE", to: "1")
             ],
             linkerSettings: [
                 .linkedLibrary("sqlite3"),
                 .linkedLibrary("z")
             ]
-        ),
-        .target(
-            name: "tippecanoe",
-            dependencies: ["tippecanoe-origin"],
-            path: "Sources/CBindings",
-            cSettings: [
-                .headerSearchPath("../"),
-                .define("TARGET_OS_IPHONE", to: "1")
-            ]
         )
     ],
     swiftLanguageVersions: [.v5],
-    cxxLanguageStandard: .cxx14
+    cxxLanguageStandard: .cxx17
 )
