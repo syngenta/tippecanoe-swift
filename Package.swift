@@ -22,31 +22,28 @@ let package = Package(
         .target(
             name: "tippecanoe-origin",
             dependencies: [],
-            path: "Sources",
+            path: "Sources/tippecanoe",
             exclude: [
-                "tippecanoe-swift",
-                "CBindings",
-                "tippecanoe/tests",
-                "tippecanoe/Dockerfile",
-                "tippecanoe/Dockerfile.centos7",
-                "tippecanoe/Makefile",
-                "tippecanoe/vector_tile.proto",
-                "tippecanoe/milo/LICENSE.txt",
-                "tippecanoe/mapbox/LICENSE-variant",
-                "tippecanoe/mapbox/LICENSE-wagyu",
-                "tippecanoe/man/tippecanoe.1",
-                "tippecanoe/filters/limit-tiles-to-bbox",
-                "tippecanoe/codecov.yml",
-                "tippecanoe/catch/LICENSE_1_0.txt",
-                "tippecanoe/README.md",
-                "tippecanoe/MADE_WITH.md",
-                "tippecanoe/LICENSE.md",
-                "tippecanoe/CHANGELOG.md"
+                "tests",
+                "Dockerfile",
+                "Dockerfile.centos7",
+                "Makefile",
+                "vector_tile.proto",
+                "milo/LICENSE.txt",
+                "mapbox/LICENSE-variant",
+                "mapbox/LICENSE-wagyu",
+                "man/tippecanoe.1",
+                "filters/limit-tiles-to-bbox",
+                "codecov.yml",
+                "catch/LICENSE_1_0.txt",
+                "README.md",
+                "MADE_WITH.md",
+                "LICENSE.md",
+                "CHANGELOG.md"
             ],
-            sources: ["tippecanoe"],
-            publicHeadersPath: "tippecanoe",
+            publicHeadersPath: ".",
             cxxSettings: [
-                .headerSearchPath("tippecanoe"),
+                .headerSearchPath("."),
                 .define("TARGET_OS_IPHONE", to: "1"),
                 .unsafeFlags(["-O3", "-w"])
             ],
@@ -66,5 +63,5 @@ let package = Package(
         )
     ],
     swiftLanguageVersions: [.v5],
-    cxxLanguageStandard: .cxx11
+    cxxLanguageStandard: .cxx14
 )
