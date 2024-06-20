@@ -11,8 +11,6 @@ For installation you can use **Swift Package Manager** or **Cocoapods**
 Use Xcode menu **File -> Add Package Dependencies...** and add this repository url
 
 ### Cocoapods
-```swift
-
 ```ruby
 pod 'tippecanoe-swift', :git => 'https://github.com/syngenta/tippecanoe-swift.git'
 ```
