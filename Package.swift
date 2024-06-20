@@ -17,6 +17,9 @@ let package = Package(
             path: "Sources/tippecanoe-swift",
             cSettings: [
                 .define("TARGET_OS_IPHONE", to: "1")
+            ],
+            cxxSettings: [
+                .define("TARGET_OS_IPHONE", to: "1")
             ]
         ),
         .target(
@@ -24,6 +27,11 @@ let package = Package(
             dependencies: ["tippecanoe-origin"],
             path: "Sources/CBindings",
             cSettings: [
+                .headerSearchPath("include"),
+                .headerSearchPath("../tippecanoe"),
+                .define("TARGET_OS_IPHONE", to: "1")
+            ], 
+            cxxSettings: [
                 .headerSearchPath("include"),
                 .headerSearchPath("../tippecanoe"),
                 .define("TARGET_OS_IPHONE", to: "1")
