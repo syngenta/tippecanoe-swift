@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.swift_version = '5.2'
   s.source_files = 'Sources/**/*.{swift,cpp,hpp}'
+  s.exclude_files = 'Sources/tippecanoe/main.cpp'
   s.public_header_files = 'Sources/CBindings/include/*.{hpp}'
   s.libraries = 'sqlite3', 'z', 'c++'
   s.prepare_command = "sh install.sh"
@@ -20,14 +21,14 @@ Pod::Spec.new do |s|
     'GCC_WARN_INHIBIT_ALL_WARNINGS' => 'YES'
   }
 
-  s.subspec 'tippecanoe' do |s|
-    s.exclude_files = 'Sources/tippecanoe/main.cpp'
-    s.source_files = [
+  s.subspec 'tippecanoe' do |tippecanoe|
+    tippecanoe.exclude_files = 'Sources/tippecanoe/main.cpp'
+    tippecanoe.source_files = [
       'Sources/tippecanoe/*.{c,h,cpp,hpp}',
       'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.{c,h,cpp,hpp}'
     ]
     #need for moving other headers to project headers
-    s.public_header_files = 'Sources/tippecanoe/version.hpp'
-    s.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
+    tippecanoe.public_header_files = 'Sources/tippecanoe/version.hpp'
+    tippecanoe.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
   end
 end
