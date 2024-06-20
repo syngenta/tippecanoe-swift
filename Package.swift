@@ -14,7 +14,10 @@ let package = Package(
         .target(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
-            path: "Sources/tippecanoe-swift"
+            path: "Sources/tippecanoe-swift",
+            cSettings: [
+                .define("TARGET_OS_IPHONE", to: "1")
+            ]
         ),
         .target(
             name: "tippecanoe",
