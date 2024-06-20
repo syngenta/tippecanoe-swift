@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
   }
 
   s.subspec 'tippecanoe' do |s|
+    s.exclude_files = 'Sources/tippecanoe/main.cpp'
     s.source_files = [
       'Sources/tippecanoe/*.{c,h,cpp,hpp}',
       'Sources/tippecanoe/{catch,jsonpull,milo,protozero,mapbox}/**/*.{c,h,cpp,hpp}'
     ]
-    s.exclude_files = 'Sources/tippecanoe/main.cpp'
     #need for moving other headers to project headers
     s.public_header_files = 'Sources/tippecanoe/version.hpp'
     s.private_header_files = 'Sources/tippecanoe/*.{h,hpp}'
