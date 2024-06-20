@@ -89,6 +89,10 @@ let package = Package(
                 "main_copy.cpp" // we use copy of main.cpp to avoid naming conflict with main.swift
             ],
             publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath("."),
+                .define("TARGET_OS_IPHONE", to: "1")
+            ],
             cxxSettings: [
                 .headerSearchPath("."),
                 .define("TARGET_OS_IPHONE", to: "1")
