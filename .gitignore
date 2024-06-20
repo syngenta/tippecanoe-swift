@@ -4,3 +4,4 @@ xcuserdata/
 *.xcworkspace
 Podfile.lock
 *.bak
+.build

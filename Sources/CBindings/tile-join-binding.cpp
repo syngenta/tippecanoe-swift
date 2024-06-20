@@ -5,8 +5,8 @@
 //  Created by Evegeny Kalashnikov on 24.09.2020.
 //
 
+#include "tile-join-binding.hpp"
 #include "tile-join.hpp"
-#include "tippecanoe/tile-join.hpp"
 
 int join_tiles(JoinOptions options) {
     int argc = 3; // 3 - means 3 records in array on init

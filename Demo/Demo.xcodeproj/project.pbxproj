@@ -3,20 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		152EA65522DE34FC00C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
 		152EA65A22DF6DC400C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
+		15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341F72C21F98100B57E09 /* tippecanoe-swift */; };
+		15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341FA2C22055C00B57E09 /* tippecanoe-swift */; };
+		15A65D872C2473A900519F1F /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A65D862C2473A900519F1F /* tippecanoe-swift */; };
 		15E2495322D8E58B001D6F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495222D8E58B001D6F87 /* AppDelegate.swift */; };
 		15E2495522D8E58B001D6F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495422D8E58B001D6F87 /* ViewController.swift */; };
 		15E2495822D8E58B001D6F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495622D8E58B001D6F87 /* Main.storyboard */; };
 		15E2495A22D8E58C001D6F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495922D8E58C001D6F87 /* Assets.xcassets */; };
 		15E2495D22D8E58C001D6F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495B22D8E58C001D6F87 /* LaunchScreen.storyboard */; };
 		15E2496822D8E58C001D6F87 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2496722D8E58C001D6F87 /* DemoTests.swift */; };
-		552E9E23A4A6494EFB221122 /* Pods_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB08372B18BD7AA908C400A /* Pods_DemoTests.framework */; };
-		DAD17DEA67E66B243DE42125 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F6C4B96641C7A907F527A8 /* Pods_Demo.framework */; };
+		15F3B3EB2C243EEE009799C7 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10F6C4B96641C7A907F527A8 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1518FECF2AC5B77900E6D238 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		152EA65422DE34FC00C6D7A4 /* polygons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = polygons.json; sourceTree = "<group>"; };
 		15E2494F22D8E58B001D6F87 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,11 +44,6 @@
 		15E2496322D8E58C001D6F87 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E2496722D8E58C001D6F87 /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		15E2496922D8E58C001D6F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AB08372B18BD7AA908C400A /* Pods_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		846E282FB2E8383C8D69D71F /* Pods-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoTests/Pods-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CFB6E2FEDB79B1A36CD1FD11 /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		D5C5CF7576193A95D682BB15 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		F7A01235DAA307DC68866907 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD17DEA67E66B243DE42125 /* Pods_Demo.framework in Frameworks */,
+				15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */,
+				15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */,
+				15A65D872C2473A900519F1F /* tippecanoe-swift in Frameworks */,
+				15F3B3EB2C243EEE009799C7 /* tippecanoe-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				552E9E23A4A6494EFB221122 /* Pods_DemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +75,6 @@
 				15E2495122D8E58B001D6F87 /* Demo */,
 				15E2496622D8E58C001D6F87 /* DemoTests */,
 				15E2495022D8E58B001D6F87 /* Products */,
-				D62FA504DAF860D788156E80 /* Pods */,
 				AABC17B581AF635813A47E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -117,21 +114,8 @@
 		AABC17B581AF635813A47E15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10F6C4B96641C7A907F527A8 /* Pods_Demo.framework */,
-				1AB08372B18BD7AA908C400A /* Pods_DemoTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D62FA504DAF860D788156E80 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D5C5CF7576193A95D682BB15 /* Pods-Demo.debug.xcconfig */,
-				F7A01235DAA307DC68866907 /* Pods-Demo.release.xcconfig */,
-				846E282FB2E8383C8D69D71F /* Pods-DemoTests.debug.xcconfig */,
-				CFB6E2FEDB79B1A36CD1FD11 /* Pods-DemoTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,17 +125,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15E2496C22D8E58C001D6F87 /* Build configuration list for PBXNativeTarget "Demo" */;
 			buildPhases = (
-				6A9B249A535F9599C08FDF29 /* [CP] Check Pods Manifest.lock */,
 				15E2494B22D8E58B001D6F87 /* Sources */,
 				15E2494C22D8E58B001D6F87 /* Frameworks */,
 				15E2494D22D8E58B001D6F87 /* Resources */,
-				28079E52672DF289D962225B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Demo;
+			packageProductDependencies = (
+				15A341F72C21F98100B57E09 /* tippecanoe-swift */,
+				15A341FA2C22055C00B57E09 /* tippecanoe-swift */,
+				15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */,
+				15A65D862C2473A900519F1F /* tippecanoe-swift */,
+			);
 			productName = Demo;
 			productReference = 15E2494F22D8E58B001D6F87 /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -160,7 +148,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15E2496F22D8E58C001D6F87 /* Build configuration list for PBXNativeTarget "DemoTests" */;
 			buildPhases = (
-				5E008BDC76613B760E9F8DC2 /* [CP] Check Pods Manifest.lock */,
 				15E2495F22D8E58C001D6F87 /* Sources */,
 				15E2496022D8E58C001D6F87 /* Frameworks */,
 				15E2496122D8E58C001D6F87 /* Resources */,
@@ -203,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 15E2494622D8E58B001D6F87;
+			packageReferences = (
+				15A65D852C2473A900519F1F /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = 15E2495022D8E58B001D6F87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,70 +224,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		28079E52672DF289D962225B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E008BDC76613B760E9F8DC2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DemoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6A9B249A535F9599C08FDF29 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Demo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		15E2494B22D8E58B001D6F87 /* Sources */ = {
@@ -465,10 +391,9 @@
 		};
 		15E2496D22D8E58C001D6F87 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5C5CF7576193A95D682BB15 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -477,6 +402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nst.tippecanoe-swift.Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -484,10 +410,9 @@
 		};
 		15E2496E22D8E58C001D6F87 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7A01235DAA307DC68866907 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +421,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nst.tippecanoe-swift.Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -503,7 +429,6 @@
 		};
 		15E2497022D8E58C001D6F87 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 846E282FB2E8383C8D69D71F /* Pods-DemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,7 +449,6 @@
 		};
 		15E2497122D8E58C001D6F87 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFB6E2FEDB79B1A36CD1FD11 /* Pods-DemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -574,6 +498,32 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		15A65D852C2473A900519F1F /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15A341F72C21F98100B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15A341FA2C22055C00B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15A65D862C2473A900519F1F /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15E2494722D8E58B001D6F87 /* Project object */;
 }

@@ -5,16 +5,17 @@
 Tippecanoe library with swift bindings. Tippecanoe version 1.36.0
 
 ## Instalation
-For installation you can use cocoapods
+For installation you can use **Swift Package Manager** or **Cocoapods**
 
-```ruby
-pod 'tippecanoe-swift'
+### Swift Package Manager
+Use Xcode menu **File -> Add Package Dependencies...** and add this repository url in search field.
+```url
+https://github.com/syngenta/tippecanoe-swift.git
 ```
 
-For using pods you need to add custom source
-
+### Cocoapods
 ```ruby
-source 'https://github.com/cropio/cocoapods-specs.git'
+pod 'tippecanoe-swift', :git => 'https://github.com/syngenta/tippecanoe-swift.git'
 ```
 
 ## Use
