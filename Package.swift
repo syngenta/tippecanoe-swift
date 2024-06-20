@@ -14,24 +14,13 @@ let package = Package(
         .target(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
-            path: "Sources/tippecanoe-swift",
-            cSettings: [
-                .define("TARGET_OS_IPHONE", to: "1")
-            ],
-            cxxSettings: [
-                .define("TARGET_OS_IPHONE", to: "1")
-            ]
+            path: "Sources/tippecanoe-swift"
         ),
         .target(
             name: "tippecanoe",
             dependencies: ["tippecanoe-origin"],
             path: "Sources/CBindings",
             cSettings: [
-                .headerSearchPath("include"),
-                .headerSearchPath("../tippecanoe"),
-                .define("TARGET_OS_IPHONE", to: "1")
-            ], 
-            cxxSettings: [
                 .headerSearchPath("include"),
                 .headerSearchPath("../tippecanoe"),
                 .define("TARGET_OS_IPHONE", to: "1")
@@ -89,10 +78,6 @@ let package = Package(
                 "main_copy.cpp" // we use copy of main.cpp to avoid naming conflict with main.swift
             ],
             publicHeadersPath: ".",
-            cSettings: [
-                .headerSearchPath("."),
-                .define("TARGET_OS_IPHONE", to: "1")
-            ],
             cxxSettings: [
                 .headerSearchPath("."),
                 .define("TARGET_OS_IPHONE", to: "1")
