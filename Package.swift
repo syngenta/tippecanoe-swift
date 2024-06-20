@@ -15,17 +15,14 @@ let package = Package(
         .target(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
-            path: "Sources/tippecanoe-swift",
-            cxxSettings: [
-                .define("TARGET_OS_IPHONE", to: "1")
-            ]
+            path: "Sources/tippecanoe-swift"
         ),
         .target(
             name: "tippecanoe",
             dependencies: ["tippecanoe-origin"],
             path: "Sources/CBindings",
-            cxxSettings: [
-                .headerSearchPath("../"),
+            cSettings: [
+                .headerSearchPath("include"),
                 .headerSearchPath("../tippecanoe"),
                 .define("TARGET_OS_IPHONE", to: "1")
             ]
@@ -51,7 +48,7 @@ let package = Package(
                 "MADE_WITH.md",
                 "LICENSE.md",
                 "CHANGELOG.md",
-                "main.cpp"
+                "main.cpp" // this file should be excluded because this naming conflict with main.swift
             ],
             sources: [
                 "geocsv.cpp",
@@ -76,10 +73,10 @@ let package = Package(
                 "pool.cpp",
                 "tile.cpp",
                 "enumerate.cpp",
-                "main_copy.cpp",
                 "tile-join.cpp",
                 "jsontool.cpp",
-                "jsonpull/jsonpull.c"
+                "jsonpull/jsonpull.c",
+                "main_copy.cpp" // we use copy of main.cpp to avoid naming conflict with main.swift
             ],
             publicHeadersPath: ".",
             cxxSettings: [
@@ -93,5 +90,5 @@ let package = Package(
         )
     ],
     swiftLanguageVersions: [.v5],
-    cxxLanguageStandard: .cxx17
+    cxxLanguageStandard: .cxx14
 )

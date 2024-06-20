@@ -5,7 +5,7 @@
 //  Created by Evegeny Kalashnikov on 24.09.2020.
 //
 
-#include "tile-join-b.hpp"
+#include "tile-join-binding.hpp"
 #include "tile-join.hpp"
 
 int join_tiles(JoinOptions options) {
