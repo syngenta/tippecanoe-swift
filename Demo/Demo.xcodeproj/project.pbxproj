@@ -11,6 +11,7 @@
 		152EA65A22DF6DC400C6D7A4 /* polygons.json in Resources */ = {isa = PBXBuildFile; fileRef = 152EA65422DE34FC00C6D7A4 /* polygons.json */; };
 		15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341F72C21F98100B57E09 /* tippecanoe-swift */; };
 		15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A341FA2C22055C00B57E09 /* tippecanoe-swift */; };
+		15A65D872C2473A900519F1F /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A65D862C2473A900519F1F /* tippecanoe-swift */; };
 		15E2495322D8E58B001D6F87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495222D8E58B001D6F87 /* AppDelegate.swift */; };
 		15E2495522D8E58B001D6F87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2495422D8E58B001D6F87 /* ViewController.swift */; };
 		15E2495822D8E58B001D6F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495622D8E58B001D6F87 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 			files = (
 				15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */,
 				15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */,
+				15A65D872C2473A900519F1F /* tippecanoe-swift in Frameworks */,
 				15F3B3EB2C243EEE009799C7 /* tippecanoe-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +138,7 @@
 				15A341F72C21F98100B57E09 /* tippecanoe-swift */,
 				15A341FA2C22055C00B57E09 /* tippecanoe-swift */,
 				15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */,
+				15A65D862C2473A900519F1F /* tippecanoe-swift */,
 			);
 			productName = Demo;
 			productReference = 15E2494F22D8E58B001D6F87 /* Demo.app */;
@@ -189,7 +192,7 @@
 			);
 			mainGroup = 15E2494622D8E58B001D6F87;
 			packageReferences = (
-				15F3B3E92C243EEE009799C7 /* XCLocalSwiftPackageReference ".." */,
+				15A65D852C2473A900519F1F /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 15E2495022D8E58B001D6F87 /* Products */;
 			projectDirPath = "";
@@ -416,7 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -425,6 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nst.tippecanoe-swift.Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -434,7 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,6 +447,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nst.tippecanoe-swift.Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -521,7 +526,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		15F3B3E92C243EEE009799C7 /* XCLocalSwiftPackageReference ".." */ = {
+		15A65D852C2473A900519F1F /* XCLocalSwiftPackageReference ".." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ..;
 		};
@@ -533,6 +538,10 @@
 			productName = "tippecanoe-swift";
 		};
 		15A341FA2C22055C00B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15A65D862C2473A900519F1F /* tippecanoe-swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "tippecanoe-swift";
 		};
