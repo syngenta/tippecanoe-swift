@@ -6,7 +6,6 @@ let package = Package(
     products: [
         .library(
             name: "tippecanoe-swift",
-            type: .dynamic,
             targets: ["tippecanoe-swift"]
         ),
     ],
