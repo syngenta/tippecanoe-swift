@@ -17,6 +17,7 @@
 		15E2495A22D8E58C001D6F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495922D8E58C001D6F87 /* Assets.xcassets */; };
 		15E2495D22D8E58C001D6F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2495B22D8E58C001D6F87 /* LaunchScreen.storyboard */; };
 		15E2496822D8E58C001D6F87 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2496722D8E58C001D6F87 /* DemoTests.swift */; };
+		15F3B3EB2C243EEE009799C7 /* tippecanoe-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */; };
 		552E9E23A4A6494EFB221122 /* Pods_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB08372B18BD7AA908C400A /* Pods_DemoTests.framework */; };
 		DAD17DEA67E66B243DE42125 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10F6C4B96641C7A907F527A8 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 			files = (
 				15A341F82C21F98100B57E09 /* tippecanoe-swift in Frameworks */,
 				15A341FB2C22055C00B57E09 /* tippecanoe-swift in Frameworks */,
+				15F3B3EB2C243EEE009799C7 /* tippecanoe-swift in Frameworks */,
 				DAD17DEA67E66B243DE42125 /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +160,7 @@
 			packageProductDependencies = (
 				15A341F72C21F98100B57E09 /* tippecanoe-swift */,
 				15A341FA2C22055C00B57E09 /* tippecanoe-swift */,
+				15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */,
 			);
 			productName = Demo;
 			productReference = 15E2494F22D8E58B001D6F87 /* Demo.app */;
@@ -211,7 +214,7 @@
 			);
 			mainGroup = 15E2494622D8E58B001D6F87;
 			packageReferences = (
-				15A341F92C22055C00B57E09 /* XCLocalSwiftPackageReference ".." */,
+				15F3B3E92C243EEE009799C7 /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 15E2495022D8E58B001D6F87 /* Products */;
 			projectDirPath = "";
@@ -569,7 +572,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		15A341F92C22055C00B57E09 /* XCLocalSwiftPackageReference ".." */ = {
+		15F3B3E92C243EEE009799C7 /* XCLocalSwiftPackageReference ".." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ..;
 		};
@@ -581,6 +584,10 @@
 			productName = "tippecanoe-swift";
 		};
 		15A341FA2C22055C00B57E09 /* tippecanoe-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "tippecanoe-swift";
+		};
+		15F3B3EA2C243EEE009799C7 /* tippecanoe-swift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "tippecanoe-swift";
 		};

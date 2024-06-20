@@ -16,9 +16,6 @@ let package = Package(
             name: "tippecanoe-swift",
             dependencies: ["tippecanoe"],
             path: "Sources/tippecanoe-swift",
-            cSettings: [
-                .define("TARGET_OS_IPHONE", to: "1")
-            ],
             cxxSettings: [
                 .define("TARGET_OS_IPHONE", to: "1")
             ]
@@ -27,18 +24,11 @@ let package = Package(
             name: "tippecanoe",
             dependencies: ["tippecanoe-origin"],
             path: "Sources/CBindings",
-            cSettings: [
-                .headerSearchPath("../"),
-                .headerSearchPath("../tippecanoe"),
-                .define("TARGET_OS_IPHONE", to: "1")
-            ],
             cxxSettings: [
                 .headerSearchPath("../"),
                 .headerSearchPath("../tippecanoe"),
-                .headerSearchPath("../tippecanoe/include"),
                 .define("TARGET_OS_IPHONE", to: "1")
-            ],
-            swiftSettings: [.interoperabilityMode(.Cxx)]
+            ]
         ),
         .target(
             name: "tippecanoe-origin",
@@ -60,7 +50,8 @@ let package = Package(
                 "README.md",
                 "MADE_WITH.md",
                 "LICENSE.md",
-                "CHANGELOG.md"
+                "CHANGELOG.md",
+                "main.cpp"
             ],
             sources: [
                 "geocsv.cpp",
@@ -85,7 +76,7 @@ let package = Package(
                 "pool.cpp",
                 "tile.cpp",
                 "enumerate.cpp",
-                "main.cpp",
+                "main_copy.cpp",
                 "tile-join.cpp",
                 "jsontool.cpp",
                 "jsonpull/jsonpull.c"
@@ -93,7 +84,6 @@ let package = Package(
             publicHeadersPath: ".",
             cxxSettings: [
                 .headerSearchPath("."),
-                .headerSearchPath("include"),
                 .define("TARGET_OS_IPHONE", to: "1")
             ],
             linkerSettings: [

@@ -1,3 +1,4 @@
 [submodule "Sources/tippecanoe"]
 	path = Sources/tippecanoe
 	url = https://github.com/Lumyk/tippecanoe.git
+	branch = spm_compatible
