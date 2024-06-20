@@ -170,7 +170,6 @@ class DemoTests: XCTestCase {
         let filtered = NSTemporaryDirectory().appending("filteredTest.mbtiles")
 
         let filter1 = #"{"layer_1":["none", ["in","id", 1, 3]], "layer_2": ["none", ["in","id", 4]], "layer_3": ["none", ["in","id", 1,2,3,4]]}"#
-        let filter2 = #"{"*":["none", ["all", ["in","id", 4, 5], ["==", "id", 1]]]}"#
         let joinOptions = TileJoinOptions(input: output, output: filtered, filter: filter1)
         self.manager.join(with: joinOptions) { result in
             switch result {
