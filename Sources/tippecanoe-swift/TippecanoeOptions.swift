@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
 import tippecanoe
+#endif
 
 public struct TippecanoeOptions {
 

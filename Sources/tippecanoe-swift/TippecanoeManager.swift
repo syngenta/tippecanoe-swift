@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if SWIFT_PACKAGE
 import tippecanoe
+#endif
 
 private extension TileJoinOptions {
 
